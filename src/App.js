@@ -1,28 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.css'
+import axios from 'axios'
+import meat from './images/meat-outline-filled.png'
+import { Link, BrowserRouter as Router, Route } from 'react-router-dom'
+// import Home from './Home'
+import PhotoList from './PhotoList'
+import Quotes from './Quotes'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Router>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h1>
+            Swans
+            <img src={meat} className="App-logo" alt="logo" />
+            nisms
+          </h1>
         </header>
-      </div>
-    );
+        <body>
+          {/* <Route exact path="/" component={Home} /> */}
+          <Route path="/" exact component={PhotoList} />
+          <Route path="/" exact component={Quotes} />
+        </body>
+        <footer />
+      </Router>
+    )
   }
 }
 
-export default App;
+export default App
